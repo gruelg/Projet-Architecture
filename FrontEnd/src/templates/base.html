@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio {% block title %}{% endblock %} </title>
+</head>
+<body>
+    <h1>PortFolio de Gruel Guillaume </h1>
+    <ul>
+        <li><a href="/resume">CV</a>
+        <li><a href="/contact">contact</a>
+        <li><a href="/projet">projets</a>
+    </ul>
+    {% block content %}{% endblock %}
+</body>
+</html>

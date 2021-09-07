@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %} - contact {% endblock %}</h1>
+{% endblock %}
+bordel
+{% block content %}
+  <form action="." method="post">
+    <label for="nom">Nom</label>
+    <input name="nom" id="nom" required>
+    <label for="prenom">Prenom</label>
+    <input type="text" name="prenom" id="prenom" required>
+    <label for="mail">@Mail</label>
+    <input type="text" name="mail" id="mail" required>
+    <label for="message">Message</label>
+    <textarea name="message" id="message" rows="5" cols="33" required></textarea>
+    <input type="submit" value="Envoyer un message">
+  </form>
+{% endblock %}

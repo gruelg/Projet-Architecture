@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %} - Projet {% endblock %}</h1>
+{% endblock %}
+bordel
+{% block content %}
+  <div id="conteneur">
+   {% for projet in projets %}
+   <div class="element ">
+       <a href="{{ projet['link'] }}" >{{ projet['title'] }}</a>
+       <p>{{ projet['intro'] }}</p>
+       <p>{{ projet['date'] }}</p>
+       <p>{{ projet['language'] }}</p>
+       {% if projet['hebergeur']== "github" %}
+            <img src="{{url_for('static', filename='icone_github.png')}}" align="middle" width="50" height="50"  />
+       {% else %}
+            <img src="{{url_for('static', filename='icone_gitlab.png')}}" align="middle" width="50" height="50"  />
+       {% endif %}
+   </div>
+   {% endfor %}
+  </div>
+
+{% endblock %}
