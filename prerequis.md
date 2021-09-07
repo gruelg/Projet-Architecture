@@ -3,17 +3,17 @@ Projet de deuxième années du module Docker &amp; Architecture
 
 ## Composants techniques de bases :
 
-- [ ] Votre projet contient un frontend avec a minima deux routes (type page d'accueil et
+- [x] Votre projet contient un frontend avec a minima deux routes (type page d'accueil et
 route générique)
 - [ ] Votre frontend et votre backend vivent dans 2 conteneurs séparés.
 - [ ] Votre projet contient un backend avec une base de données.
 - [ ] Votre base de données est fonctionnelle et composée d’au moins une table ainsi
 qu’un schéma explicite.
-- [ ] Votre projet contient au moins un Dockerfile.
+- [x] Votre projet contient au moins un Dockerfile.
 - [ ] Votre projet contient au moins un fichier docker-compose.yml
 - [ ] Vous avez push au moins une image docker sur un container registry (type
 docker-hub, GCR ...)
-- [ ] Votre projet est accessible en ligne sur un gestionnaire de version type GitHub.
+- [x] Votre projet est accessible en ligne sur un gestionnaire de version type GitHub.
 - [ ] Votre projet a été builder sans erreur (joindre une capture d’écran dans votre
 README.md)
 - [ ] Vous avez au moins un fichier de test qui :
