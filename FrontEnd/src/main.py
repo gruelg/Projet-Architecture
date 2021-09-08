@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, url_for
 import os
 from flask import request
 import json
+import requests
 app = Flask(__name__)
 
 @app.route('/')
@@ -16,7 +17,9 @@ def resume():
     """
         renvoie le template de base quand le route correspond a /resume
     """
-        projet =  requests.get('http://<api>/resume/')
+    resume =  requests.get('http://127.0.0.1:8000/resume')
+    for row in resume : 
+        print(row)
     return render_template('resume.html')
 
 @app.route('/contact')
@@ -47,9 +50,8 @@ def projet():
         renvoie le template projet quand le route correspond a /projet
         et affiche tous les projets d'apres les données enregistrer dans le fichier json
     """
-    projet =  requests.get('http://<api>/projet/')
     return render_template('projet.html', projets=projet)
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run(host='127.0.0.1', port=port)
