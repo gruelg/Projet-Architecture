@@ -2,7 +2,7 @@ version : "3"
 services:
   db: 
     #build: ./bdd
-    image: mysql
+    image: mysql:5.7
     volumes:
       - ./bdd/SQL:/docker-entrypoint-initdb.d/:ro
     environment :  
