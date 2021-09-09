@@ -5,9 +5,9 @@ from sqlalchemy.orm import sessionmaker
 import json
 
 config = {
-    'host': '127.0.0.1',
+    'host': 'localhost',
     'port': '3306',
-    'user': 'api',
+    'user': 'root',
     'password':'my-secret-pw',
     'database':'Curiculum'
 }
