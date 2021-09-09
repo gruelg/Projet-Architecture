@@ -5,14 +5,14 @@ from sqlalchemy.orm import sessionmaker
 import json
 
 config = {
-    'host': '127.0.0.1',
+    'host': 'localhost',
     'port': '3306',
-    'user': 'api',
+    'user': 'root',
     'password':'my-secret-pw',
     'database':'Curiculum'
 }
 db_user = config.get('user')
-db_pwd =config.get('password')
+db_pwd =config.get('password') 
 db_host = config.get('host')
 db_port = config.get('port')  
 db_name = config.get('database')
