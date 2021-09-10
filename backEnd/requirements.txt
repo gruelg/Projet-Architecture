@@ -1,4 +1,6 @@
-fastapi
-uvicorn
+Flask
+Flask-SQLAlchemy
 SQLAlchemy
-pymysql
+PyMySQL
+pytest
+cryptography

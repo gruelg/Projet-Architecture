@@ -1,31 +1,40 @@
 version : "3"
 services:
-  db: 
-    #build: ./bdd
+  db:
     image: mysql:5.7
-    volumes:
-      - ./bdd/SQL:/docker-entrypoint-initdb.d/:ro
-    environment :  
-      MYSQL_ROOT_PASSWORD : my-secret-pw
-      MYSQL_USER : api
     ports:
-      - 3306:3306
+      - "3303:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: newuser 
+      MYSQL_PASSWORD: newpassword
+      MYSQL_DATABASE: Curiculum
+    expose:
+      # Opens port 3306 on the container
+      - '3306'
+    volumes:
+      - ./db/SQL:/docker-entrypoint-initdb.d/:ro
+      - .:/app
     healthcheck:
-      test: ["CMD", "mysql" ,"ping", "-h", "localhost"]
+      test: "curl --fail http://127.0.0.1:3306 || exit 1"   
       interval: 10s
       timeout: 5s    
-
+    expose:
+      # Opens port 3306 on the container
+      - '3306'
   front:
     build: ./frontend
     ports:
       - 5000:5000
     healthcheck:
       test: "curl --fail http://127.0.0.1:5000 || exit 1"
-      interval: 10s
+      interval: 60s
       timeout: 5s
 
   back : 
     build: ./backend
+    links:
+      - db
     ports:
       - 8000:8000
     healthcheck:

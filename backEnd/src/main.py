@@ -1,14 +1,21 @@
-from fastapi import FastAPI
-from sqlalchemy import *
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import sessionmaker
+from typing import List, Dict
+from flask import Flask
 import json
+from sqlalchemy import create_engine, MetaData, Table, Column, Float, Integer, String, ForeignKey
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.dialects.mysql import DATETIME
+import logging
+import pymysql
+from sqlalchemy.orm import sessionmaker
+from datetime import date
+
+app = Flask(__name__)
 
 config = {
-    'host': 'localhost',
+    'host': 'db',
     'port': '3306',
-    'user': 'root',
-    'password':'my-secret-pw',
+    'user': 'newuser',
+    'password':'newpassword',
     'database':'Curiculum'
 }
 db_user = config.get('user')
@@ -21,7 +28,7 @@ connexion_str = f'mysql+pymysql://{db_user}:{db_pwd}@{db_host}:{db_port}/{db_nam
 engine = create_engine(connexion_str, pool_recycle=3600)
 connexion = engine.connect()
 #metadata
-metadata = MetaData()
+metadata = MetaData(bind=engine)
 metadata.reflect(engine)
 Base = automap_base(metadata=metadata)
 Base.prepare()
@@ -31,10 +38,8 @@ resume= Base.classes.resume
 Session = sessionmaker(bind = engine)
 session = Session()
 
-app = FastAPI()
-
-@app.get("/resume")
-def read_root():
+@app.route('/resume')
+def fetch_payments() :
     result = session.query(resume).all()
     print(result)
     retour = ""
@@ -43,10 +48,5 @@ def read_root():
     print(retour)
     return retour
 
-@app.get("/experience")
-def read_root():
-    result = session.query(resume).all()
-    print(result)
-    retour = ""
-   
-    return retour
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', debug=True, port=8000)
