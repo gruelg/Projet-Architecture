@@ -17,7 +17,7 @@ def resume():
     """
         renvoie le template de base quand le route correspond a /resume
     """
-    resume =  requests.get('http://0.0.0.0:8000/resume')
+    resume =  requests.get('http://back:8000/resume')
     for row in resume : 
         print(row)
     return render_template('resume.html')

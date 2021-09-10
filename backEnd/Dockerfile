@@ -1,6 +1,5 @@
 FROM python:3.6-slim
-
-EXPOSE 5000
+EXPOSE 8000
 RUN apt update && apt install -y netcat
 WORKDIR /src
 COPY requirements.txt .
