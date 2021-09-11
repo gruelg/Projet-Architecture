@@ -47,6 +47,20 @@ def fetch_payments() :
         retour += json.dumps({ i : { "prenom" : result[i].prenom, "nom" : result[i].nom, "email" : result[i].email, "date_naissance" : result[i].date_naissance , "pays" :  result[i].pays, "ville" : result[i].ville, "code_postal" : result[i]. code_postal }})
     print(retour)
     return retour
+"""
+    TODO : 
+    recuperer les données enovyé du front pour les sav dans la base de données 
+
+"""
+@app.route('/contact')
+def fetch_payments() :
+    result = session.query(resume).all()
+    print(result)
+    retour = ""
+    for i in range(len(result)):
+        retour += json.dumps({ i : { "prenom" : result[i].prenom, "nom" : result[i].nom, "email" : result[i].email, "date_naissance" : result[i].date_naissance , "pays" :  result[i].pays, "ville" : result[i].ville, "code_postal" : result[i]. code_postal }})
+    print(retour)
+    return retour
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=8000)

@@ -40,6 +40,7 @@ def text_box():
     response['prenom'] = request.form['prenom']
     response['mail'] = request.form['mail']
     response['message'] = request.form['message']
+    ### a refaire pour que les données du formulaires soient envoyé a l'api 
     with open('messages.json', 'w') as f:
         json.dump(response, f, indent=4, ensure_ascii=False, sort_keys=False)
     return render_template('base.html')
