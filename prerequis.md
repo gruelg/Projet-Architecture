@@ -5,12 +5,12 @@ Projet de deuxième années du module Docker &amp; Architecture
 
 - [x] Votre projet contient un frontend avec a minima deux routes (type page d'accueil et
 route générique)
-- [ ] Votre frontend et votre backend vivent dans 2 conteneurs séparés.
-- [ ] Votre projet contient un backend avec une base de données.
-- [ ] Votre base de données est fonctionnelle et composée d’au moins une table ainsi
+- [x] Votre frontend et votre backend vivent dans 2 conteneurs séparés.
+- [x] Votre projet contient un backend avec une base de données.
+- [x] Votre base de données est fonctionnelle et composée d’au moins une table ainsi
 qu’un schéma explicite.
 - [x] Votre projet contient au moins un Dockerfile.
-- [ ] Votre projet contient au moins un fichier docker-compose.yml
+- [x] Votre projet contient au moins un fichier docker-compose.yml
 - [ ] Vous avez push au moins une image docker sur un container registry (type
 docker-hub, GCR ...)
 - [x] Votre projet est accessible en ligne sur un gestionnaire de version type GitHub.
@@ -19,7 +19,7 @@ README.md)
 - [ ] Vous avez au moins un fichier de test qui :
  *  - [ ] test la santée de vos conteneurs
  *  - [ ] test le bon fonctionnement de votre application (front / back)
- *  - [ ] test du bon fonctionnement de votre base de données
+ *  - [x] test du bon fonctionnement de votre base de données
 
 ## Architecture
 
