@@ -13,5 +13,5 @@ create table Curiculum.resume(
     code_postal VARCHAR(5)
 );
 
-insert into Curiculum.resume(nom, prenom, email, date_naissance, pays, ville, code_postal) values ("Gruel","Guillaume","gruelg@outlook.com","30/06/1998","France","Orléans","45000");
+insert into Curiculum.resume(nom, prenom, email, date_naissance, pays, ville, code_postal) values ("","","","","","","");
 
