@@ -27,3 +27,5 @@ Le projet est séparé en 3 parties :
 ![databases](https://user-images.githubusercontent.com/50297389/132940980-05e3b524-b525-4c1e-962c-59c0dfddc583.PNG)
 
 
+## Build des containers 
+![image](https://user-images.githubusercontent.com/50297389/138876037-5177cc77-7790-4969-8232-3dff08d75eb6.png)
