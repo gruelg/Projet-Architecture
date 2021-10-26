@@ -8,7 +8,7 @@ Portfolio contenant
 * un resumé 
 * la liste de mes comptétences
 * un lien vers mes repo git (github/ gitlab) 
-* une page de contacte
+* une page de contact
 
 
 Toutes les parties sont dans des containeurs distincts 

@@ -3,6 +3,7 @@ import os
 from flask import request
 import json
 import requests
+import urllib.request
 app = Flask(__name__)
 
 @app.route('/')
@@ -17,10 +18,9 @@ def resume():
     """
         renvoie le template de base quand le route correspond a /resume
     """
-    resume =  requests.get('http://back:8000/resume')
-    for row in resume : 
-        print(row)
-    return render_template('resume.html')
+    with urllib.request.urlopen("http://back:8000/resume") as url:
+        data = json.loads(url.read().decode())
+    return data
 
 @app.route('/contact')
 def contact():

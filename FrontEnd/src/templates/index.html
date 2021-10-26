@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>PortFolio</title>
-</head>
-<body>
-    <h1>Portfolio</h1>
+{% extends 'base.html' %}
 
-    <a href="" > CV </a>
-    <a href="" >Contact</a>
-</body>
-</html>
+{% block header %}
+  <h1>{% block title %} - CV {% endblock %}</h1>
+{% endblock %}
+{% block content %}
+  <div id="conteneur">
+   
+   <div class="element ">
+       <p>{{ resume['nom'] }}</p>
+    
+   </div>
+  </div>
+
+{% endblock %}
