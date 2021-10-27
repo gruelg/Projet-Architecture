@@ -27,6 +27,7 @@ README.md)
  *  - [ ] les différents composants/services de votre application
  *  - [ ] les liens entre ces différents composants/services
  *  - [ ] les ports exposés sont mis en valeur (côté client et coté backend)
+ 
 ## Déploiment & production 
 
 - [ ] Votre projet dispose d’un service de reverse proxy type nginx ou traefik.
@@ -37,6 +38,7 @@ vos conteneurs.
 - [ ] Votre projet est déployé chez un fournisseur Cloud type (Heroku, GCP, Azure,
 AWS...) et dispose d’un URL d'accès public.
 - [ ] Vous avez automatisé au moins un test dans votre fichier docker-compose.yml
+
 ## Clean Code 
 - [ ] Votre projet dispose d’une documentation claire et concise qui explique les différents
 endpoints de votre application ainsi que les ports exposés.
